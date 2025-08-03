@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# Optional: VSCode settings
+.vscode/
+
+# Optional: Zipped files
+*.zip
+
+# Database files (if any local)
+*.sqlite
+*.db
+
+# Coverage reports
+coverage/
+
+# dotenv backups
+.env.*.local
+
+# React (frontend if present)
+**/frontend/node_modules/
+**/frontend/build/
