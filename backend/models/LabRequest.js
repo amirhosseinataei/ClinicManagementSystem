@@ -1,10 +1,11 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const labRequestSchema = new mongoose.Schema({
-  appointment_id: { type: mongoose.Schema.Types.ObjectId, ref: "Appointment" },
-  type: String,
-  status: String,
-  result_file_url: String,
-});
+const labRequestSchema = new Schema({
+  appointment_id: { type: Schema.Types.ObjectId, ref: 'Appointment', required: true },
+  type: { type: String },
+  status: { type: String, default: 'pending' },
+  result_file_url: { type: String },
+}, { timestamps: true });
 
-module.exports = mongoose.model("LabRequest", labRequestSchema);
+module.exports = mongoose.model('LabRequest', labRequestSchema);

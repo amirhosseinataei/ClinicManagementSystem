@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const loginSessionSchema = new mongoose.Schema({
-  user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  token: String,
-  os: String,
-  browser: String,
-  expires_at: Date,
-  created_at: Date,
-});
+const loginSessionSchema = new Schema({
+  user_id: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+  token: { type: String, required: true },
+  os: { type: String },
+  browser: { type: String },
+  expires_at: { type: Date },
+}, { timestamps: { createdAt: 'created_at', updatedAt: false } });
 
-module.exports = mongoose.model("LoginSession", loginSessionSchema);
+module.exports = mongoose.model('LoginSession', loginSessionSchema);

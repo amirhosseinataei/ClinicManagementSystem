@@ -1,15 +1,16 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const userSchema = new mongoose.Schema({
-  name: String,
+const userSchema = new Schema({
+  name: { type: String },
   phone: { type: String, required: true, unique: true },
-  password: String,
+  password: { type: String },
   national_code: { type: String, required: true, unique: true },
-  sms_code: String,
-  is_phone_verified: Boolean,
-  role: String,
-  clinic_id: { type: mongoose.Schema.Types.ObjectId, ref: "Clinic" },
-  current_login_token: String,
-});
+  sms_code: { type: String },
+  is_phone_verified: { type: Boolean, default: false },
+  role: { type: String, default: 'user' },
+  clinic_id: { type: Schema.Types.ObjectId, ref: 'Clinic' },
+  current_login_token: { type: String },
+}, { timestamps: true });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model('User', userSchema);

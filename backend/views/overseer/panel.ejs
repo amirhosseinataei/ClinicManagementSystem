@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+	<title>سامانه نظارت | مدیریت درمانگاه‌ها، داروها و نسخه‌ها</title> 
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="چآوک‌وب | chabokWeb">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/apexcharts/css/apexcharts.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="/css/style-rtl.css">
+
+</head>
+
+<body>
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+<!-- Sidebar START -->
+<nav class="navbar sidebar navbar-expand-xl navbar-dark bg-dark">
+	<div class="d-flex align-items-center">
+	  <a class="navbar-brand" href="/overseer-panel">
+		<img class="navbar-brand-item" src="/images/logso.png" alt="">
+	  </a>
+	</div>
+  
+	<div class="offcanvas offcanvas-start flex-row custom-scrollbar h-100" data-bs-backdrop="true" tabindex="-1" id="offcanvasSidebar">
+	  <div class="offcanvas-body sidebar-content d-flex flex-column bg-dark">
+  
+        <ul class="navbar-nav flex-column" id="navbar-sidebar">
+		  
+            <!-- داشبورد ناظر -->
+            <li class="nav-item">
+              <a href="/overseer-panel" class="nav-link active">
+                <i class="bi bi-speedometer2 fa-fw me-2"></i>داشبورد ناظر
+              </a>
+            </li>
+    
+            <!-- داروها -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#collapseDrugs" role="button">
+                <i class="bi bi-capsule-pill fa-fw me-2"></i>مدیریت داروها
+              </a>
+              <ul class="nav collapse flex-column" id="collapseDrugs" data-bs-parent="#navbar-sidebar">
+                <li class="nav-item"><a class="nav-link" href="/overseer/drugs">لیست داروها</a></li>
+              </ul>
+            </li>
+    
+            <!-- درمانگاه‌ها -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#collapseClinics" role="button">
+                <i class="bi bi-hospital fa-fw me-2"></i>درمانگاه‌ها
+              </a>
+              <ul class="nav collapse flex-column" id="collapseClinics" data-bs-parent="#navbar-sidebar">
+                <li class="nav-item"><a class="nav-link" href="/overseer/clinics">لیست درمانگاه‌ها</a></li>
+              </ul>
+            </li>
+    
+            <!-- داروخانه‌ها -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#collapsePharmacies" role="button">
+                <i class="bi bi-shop fa-fw me-2"></i>مدیریت داروخانه‌ها
+              </a>
+              <ul class="nav collapse flex-column" id="collapsePharmacies" data-bs-parent="#navbar-sidebar">
+                <li class="nav-item"><a class="nav-link" href="/overseer/pharmacies">لیست داروخانه‌ها</a></li>
+              </ul>
+            </li>
+    
+            <!-- نسخه‌ها -->
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#collapsePrescriptions" role="button">
+                <i class="bi bi-file-medical fa-fw me-2"></i>نسخه‌ها
+              </a>
+              <ul class="nav collapse flex-column" id="collapsePrescriptions" data-bs-parent="#navbar-sidebar">
+                <li class="nav-item"><a class="nav-link" href="/overseer/prescriptions">مشاهده نسخه‌ها</a></li>
+              </ul>
+            </li>
+    
+          </ul>
+  
+		<!-- Sidebar Footer -->
+		<div class="px-3 mt-auto pt-3">
+		  <div class="d-flex align-items-center justify-content-between text-primary-hover">
+			<a class="h5 mb-0 text-body" href="/overseer/settings" data-bs-toggle="tooltip" title="تنظیمات">
+			  <i class="bi bi-gear-fill"></i>
+			</a>
+			<a class="h5 mb-0 text-body" href="/" data-bs-toggle="tooltip" title="صفحه اصلی">
+			  <i class="bi bi-globe"></i>
+			</a>
+			<a class="h5 mb-0 text-body" href="/logout" data-bs-toggle="tooltip" title="خروج">
+			  <i class="bi bi-power"></i>
+			</a>
+		  </div>
+		</div>
+  
+	  </div>
+	</div>
+</nav>
+  
+<!-- Sidebar END -->
+
+<!-- Page content START -->
+<div class="page-content">
+	<!-- Top bar START -->
+	<nav class="navbar top-bar navbar-light border-bottom py-0 py-xl-3">
+		<div class="container-fluid p-0">
+			<div class="d-flex align-items-center w-100">
+
+				<!-- Logo START -->
+				<div class="d-flex align-items-center d-xl-none">
+					<a class="navbar-brand" href="/">
+						<img class="light-mode-item navbar-brand-item h-30px" src="/images/logo.png" alt="">
+						<img class="dark-mode-item navbar-brand-item h-30px" src="/images/logo.png" alt="">
+					</a>
+				</div>
+				<!-- Logo END -->
+
+				<!-- Toggler for sidebar START -->
+				<div class="navbar-expand-xl sidebar-offcanvas-menu">
+					<button class="navbar-toggler me-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-expanded="false" aria-label="Toggle navigation" data-bs-auto-close="outside">
+						<i class="bi bi-text-right fa-fw h2 lh-0 mb-0 rtl-flip" data-bs-target="#offcanvasMenu"> </i>
+					</button>
+				</div>
+				<!-- Toggler for sidebar END -->
+				
+				<!-- Top bar left -->
+				<div class="navbar-expand-lg ms-auto ms-xl-0">
+					
+					<!-- Toggler for menubar START -->
+					<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopContent" aria-controls="navbarTopContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-animation">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</button>
+					<!-- Toggler for menubar END -->
+
+ 
+				</div>
+				<!-- Top bar left END -->
+				
+
+			</div>
+		</div>
+	</nav>
+	<!-- Top bar END -->
+	<!-- Page main content START -->
+	<div class="page-content-wrapper border">
+
+		<!-- Title -->
+		<div class="row">
+			<div class="col-12 mb-3">
+				<h1 class="h3 mb-2 mb-sm-0 fs-5">داشبورد</h1>
+			</div>
+		</div>
+
+<!-- Counter boxes START -->
+<div class="row g-4 mb-4">
+
+	<!-- داروهای فعال -->
+	<div class="col-md-6 col-xxl-3">
+	  <div class="card card-body bg-success bg-opacity-10 p-4 h-100">
+		<div class="d-flex justify-content-between align-items-center">
+		  <div>
+			<h2 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<%= approvedDrugsCount %>" data-purecounter-delay="100">0</h2>
+			<span class="mb-0 h6 fw-light">داروهای تأییدشده</span>
+		  </div>
+		  <div class="icon-lg rounded-circle bg-success text-white mb-0">
+			<i class="bi bi-capsule-pill fa-fw"></i>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  
+	<!-- درمانگاه‌های ثبت‌شده -->
+	<div class="col-md-6 col-xxl-3">
+	  <div class="card card-body bg-info bg-opacity-10 p-4 h-100">
+		<div class="d-flex justify-content-between align-items-center">
+		  <div>
+			<h2 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<%= clinicsCount %>" data-purecounter-delay="100">0</h2>
+			<span class="mb-0 h6 fw-light">درمانگاه‌های ثبت‌شده</span>
+		  </div>
+		  <div class="icon-lg rounded-circle bg-info text-white mb-0">
+			<i class="bi bi-hospital fa-fw"></i>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  
+	<!-- درخواست‌های دارویی در انتظار -->
+	<div class="col-md-6 col-xxl-3">
+	  <div class="card card-body bg-warning bg-opacity-15 p-4 h-100">
+		<div class="d-flex justify-content-between align-items-center">
+		  <div>
+			<h2 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<%= pendingDrugRequestsCount %>" data-purecounter-delay="100">0</h2>
+			<span class="mb-0 h6 fw-light">درخواست‌های تأیید دارو</span>
+		  </div>
+		  <div class="icon-lg rounded-circle bg-warning text-white mb-0">
+			<i class="bi bi-exclamation-diamond fa-fw"></i>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  
+	<!-- نسخه‌های بازخورد داده‌شده -->
+	<div class="col-md-6 col-xxl-3">
+	  <div class="card card-body bg-purple bg-opacity-10 p-4 h-100">
+		<div class="d-flex justify-content-between align-items-center">
+		  <div>
+			<h2 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<%= feedbackPrescriptionsCount %>" data-purecounter-delay="100">0</h2>
+			<span class="mb-0 h6 fw-light">نسخه‌های بازخورد‌داده‌شده</span>
+		  </div>
+		  <div class="icon-lg rounded-circle bg-purple text-white mb-0">
+			<i class="bi bi-chat-dots fa-fw"></i>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  
+</div>
+<!-- Counter boxes END -->
+
+<!-- Dashboard Cards for Clinic Supervisor START -->
+<div class="row g-4 mb-4">
+
+	<!-- Clinics Overview START -->
+	<div class="col-lg-6 col-xxl-4">
+	  <div class="card shadow h-100">
+		<div class="card-header border-bottom d-flex justify-content-between align-items-center p-4">
+		  <h5 class="card-header-title">درمانگاه‌ها</h5>
+		  <a href="/overseer/clinics" class="btn btn-link p-0 mb-0">مشاهده همه</a>
+		</div>
+  
+		<div class="card-body p-4">
+		  <% clinics.forEach(function(clinic) { %>
+		  <!-- Clinic item START -->
+		  <div class="d-sm-flex justify-content-between align-items-center mb-3">
+			<div>
+			  <h6 class="mb-1 fw-normal"><%= clinic.name %></h6>
+			  <ul class="list-inline mb-0 small">
+				<li class="list-inline-item fw-light me-2"><i class="fas fa-user-md text-primary me-1"></i> <%= clinic.doctorCount %> پزشک</li>
+				<li class="list-inline-item fw-light me-2"><i class="fas fa-pills text-success me-1"></i> <%= clinic.prescriptionsCount %> نسخه</li>
+			  </ul>
+			</div>
+			<a href="/overseer/clinics/<%= clinic.id %>" class="btn btn-sm btn-light mb-0">جزئیات</a>
+		  </div>
+		  <!-- Clinic item END -->
+		  <hr>
+		  <% }) %>
+		</div>
+	  </div>
+	</div>
+	<!-- Clinics Overview END -->
+  
+	<!-- Pending Drugs START -->
+	<div class="col-lg-6 col-xxl-4">
+	  <div class="card shadow h-100">
+		<div class="card-header border-bottom p-4">
+		  <h5 class="card-header-title">داروهای در انتظار تأیید</h5>
+		</div>
+  
+		<div class="card-body p-4">
+		  <div class="custom-scrollbar h-300px">
+  
+			<!-- Drug items -->
+			<% pendingDrugs.forEach(function(drug, index) { %>
+			<div class="d-flex justify-content-between position-relative">
+			  <div>
+				<h6 class="mb-0 fw-normal"><a href="/overseer/drugs/<%= drug.id %>" class="stretched-link"><%= drug.name %></a></h6>
+				<p class="mb-0"><%= drug.statusText %></p>
+				<span class="small"><%= drug.requestTimeAgo %></span>
+			  </div>
+			</div>
+			<% if(index < pendingDrugs.length - 1) { %><hr><% } %>
+			<% }) %>
+  
+		  </div>
+		</div>
+  
+		<div class="card-footer border-top">
+		  <div class="alert alert-warning d-flex align-items-center mb-0 py-2">
+			<div>
+			  <small class="mb-0"><%= morePendingDrugsCount %> داروی دیگر در صف تأیید</small>
+			</div>
+			<div class="ms-auto">
+			  <a class="btn btn-sm btn-warning-soft mb-0" href="/overseer/drugs">مشاهده همه</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- Pending Drugs END -->
+  
+	<!-- Pending Prescriptions START -->
+	<div class="col-xxl-4">
+	  <div class="card shadow h-100">
+		<div class="card-header border-bottom d-flex justify-content-between align-items-center p-4">
+		  <h5 class="card-header-title">نسخه‌های در انتظار بررسی</h5>
+		  <a href="/overseer/prescriptions" class="btn btn-link p-0 mb-0">مشاهده همه</a>
+		</div>
+  
+		<div class="card-body p-4">
+		  <% pendingPrescriptions.forEach(function(prescription, index) { %>
+		  <!-- Prescription item -->
+		  <div class="d-flex justify-content-between position-relative mb-3">
+			<div>
+			  <h6 class="mb-0 fw-normal"><a href="/overseer/prescriptions/<%= prescription.id %>" class="stretched-link">نسخه شماره <%= prescription.number %></a></h6>
+			  <p class="mb-0">ارسال‌شده توسط دکتر <%= prescription.doctorName %> (بیمار: <%= prescription.patientName %>)</p>
+			  <span class="small"><%= prescription.sentTimeAgo %></span>
+			</div>
+		  </div>
+		  <% if(index < pendingPrescriptions.length - 1) { %><hr><% } %>
+		  <% }) %>
+		</div>
+	  </div>
+	</div>
+	<!-- Pending Prescriptions END -->
+  
+  </div>
+  <!-- Dashboard Cards for Clinic Supervisor END -->
+
+	</div>
+	<!-- Page main content END -->
+</div>
+<!-- Page content END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script src="/vendor/apexcharts/js/apexcharts.min.js"></script>
+<script src="/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+
+<!-- Template Functions -->
+<script src="/js/functions.js"></script>
+
+</body>
+
+</html>

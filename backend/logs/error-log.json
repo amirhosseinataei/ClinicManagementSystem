@@ -1,0 +1,58 @@
+[
+  {
+    "timestamp": "2025-08-08T17:50:25.472Z",
+    "statusCode": 500,
+    "message": "خطای داخلی سرور",
+    "stack": "Error: خطای داخلی سرور\n    at globalErrorHandler (G:\\ClinicManagementSystem\\backend\\middlewares\\errorHandler.js:53:11)\n    at Layer.handle_error (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\layer.js:71:5)\n    at trim_prefix (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:326:13)\n    at G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at IncomingMessage.next (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at done (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\response.js:1044:25)\n    at tryHandleCache (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:277:14)\n    at exports.renderFile [as engine] (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\view.js:135:8)",
+    "url": "/overseer/clinics",
+    "method": "GET"
+  },
+  {
+    "timestamp": "2025-08-08T17:50:25.230Z",
+    "statusCode": 500,
+    "message": "خطای داخلی سرور",
+    "stack": "Error: خطای داخلی سرور\n    at globalErrorHandler (G:\\ClinicManagementSystem\\backend\\middlewares\\errorHandler.js:53:11)\n    at Layer.handle_error (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\layer.js:71:5)\n    at trim_prefix (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:326:13)\n    at G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at IncomingMessage.next (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at done (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\response.js:1044:25)\n    at tryHandleCache (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:277:14)\n    at exports.renderFile [as engine] (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\view.js:135:8)",
+    "url": "/overseer/clinics",
+    "method": "GET"
+  },
+  {
+    "timestamp": "2025-08-08T17:50:25.030Z",
+    "statusCode": 500,
+    "message": "خطای داخلی سرور",
+    "stack": "Error: خطای داخلی سرور\n    at globalErrorHandler (G:\\ClinicManagementSystem\\backend\\middlewares\\errorHandler.js:53:11)\n    at Layer.handle_error (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\layer.js:71:5)\n    at trim_prefix (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:326:13)\n    at G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at IncomingMessage.next (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at done (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\response.js:1044:25)\n    at tryHandleCache (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:277:14)\n    at exports.renderFile [as engine] (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\view.js:135:8)",
+    "url": "/overseer/clinics",
+    "method": "GET"
+  },
+  {
+    "timestamp": "2025-08-08T17:50:24.579Z",
+    "statusCode": 500,
+    "message": "خطای داخلی سرور",
+    "stack": "Error: خطای داخلی سرور\n    at globalErrorHandler (G:\\ClinicManagementSystem\\backend\\middlewares\\errorHandler.js:53:11)\n    at Layer.handle_error (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\layer.js:71:5)\n    at trim_prefix (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:326:13)\n    at G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at IncomingMessage.next (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at done (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\response.js:1044:25)\n    at tryHandleCache (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:277:14)\n    at exports.renderFile [as engine] (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\view.js:135:8)",
+    "url": "/overseer/clinics",
+    "method": "GET"
+  },
+  {
+    "timestamp": "2025-08-08T17:50:23.419Z",
+    "statusCode": 500,
+    "message": "خطای داخلی سرور",
+    "stack": "Error: خطای داخلی سرور\n    at globalErrorHandler (G:\\ClinicManagementSystem\\backend\\middlewares\\errorHandler.js:53:11)\n    at Layer.handle_error (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\layer.js:71:5)\n    at trim_prefix (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:326:13)\n    at G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at IncomingMessage.next (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at done (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\response.js:1044:25)\n    at tryHandleCache (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:277:14)\n    at exports.renderFile [as engine] (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\view.js:135:8)",
+    "url": "/overseer/clinics",
+    "method": "GET"
+  },
+  {
+    "timestamp": "2025-08-08T17:46:24.143Z",
+    "statusCode": 500,
+    "message": "خطای داخلی سرور",
+    "stack": "Error: خطای داخلی سرور\n    at globalErrorHandler (G:\\ClinicManagementSystem\\backend\\middlewares\\errorHandler.js:53:11)\n    at Layer.handle_error (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\layer.js:71:5)\n    at trim_prefix (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:326:13)\n    at G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at IncomingMessage.next (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at done (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\response.js:1044:25)\n    at tryHandleCache (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:277:14)\n    at exports.renderFile [as engine] (G:\\ClinicManagementSystem\\backend\\node_modules\\ejs\\lib\\ejs.js:491:10)\n    at View.render (G:\\ClinicManagementSystem\\backend\\node_modules\\express\\lib\\view.js:135:8)",
+    "url": "/overseer/clinics",
+    "method": "GET"
+  },
+  {
+    "timestamp": "2025-07-31T20:47:12.345Z",
+    "statusCode": 401,
+    "message": "دسترسی غیرمجاز. لطفاً وارد شوید.",
+    "stack": "...",
+    "url": "/api/prescriptions",
+    "method": "GET"
+  }
+]

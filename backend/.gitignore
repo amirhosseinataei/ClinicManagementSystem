@@ -8,8 +8,8 @@ yarn-error.log*
 .env
 
 # Logs
-logs/
-*.log
+# logs/
+# *.log
 
 # OS generated
 .DS_Store

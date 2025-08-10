@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "G:\\ClinicManagementSystem\\backend\\logs\\.31dc6614afe2fac4d93ca1859c6d412b43c28fba-audit.json",
+    "files": [
+        {
+            "date": 1754666261487,
+            "name": "G:\\ClinicManagementSystem\\backend\\logs\\app-2025-08-08.log",
+            "hash": "717b782ad80ceffbef7d4abcb39a5cf88c73b3568b2c8e695f4d4714bf71e82e"
+        },
+        {
+            "date": 1754742492531,
+            "name": "G:\\ClinicManagementSystem\\backend\\logs\\app-2025-08-09.log",
+            "hash": "38fa5468bd399a97ddb965aa15e203a95a16c9502b88d263eec359bd9dd7a270"
+        },
+        {
+            "date": 1754846784000,
+            "name": "G:\\ClinicManagementSystem\\backend\\logs\\app-2025-08-10.log",
+            "hash": "d159e3464cf5403d5e5525e105de494b0f508be32b304dbdaf8cd2235c7dcd57"
+        }
+    ],
+    "hashType": "sha256"
+}

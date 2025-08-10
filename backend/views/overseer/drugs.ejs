@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+	<title>سامانه نظارت | مدیریت داروها</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="stylesheet" href="/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" href="/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" href="/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
+	<link rel="stylesheet" href="/css/style-rtl.css">
+</head>
+
+<body>
+<main>
+	<div id="loader" class="loader-overlay">
+		<div class="loader"></div>
+	  </div>
+	<nav class="navbar sidebar navbar-expand-xl navbar-dark bg-dark">
+		<div class="d-flex align-items-center">
+			<a class="navbar-brand" href="/overseer-panel">
+				<img class="navbar-brand-item" src="/images/logso.png" alt="">
+			</a>
+		</div>
+		
+		<div class="offcanvas offcanvas-start flex-row custom-scrollbar h-100" data-bs-backdrop="true" tabindex="-1" id="offcanvasSidebar">
+			<div class="offcanvas-body sidebar-content d-flex flex-column bg-dark">
+				
+				<ul class="navbar-nav flex-column" id="navbar-sidebar">
+					
+					<!-- داشبورد ناظر -->
+					<li class="nav-item">
+						<a href="/overseer-panel" class="nav-link">
+							<i class="bi bi-speedometer2 fa-fw me-2"></i>داشبورد ناظر
+						</a>
+					</li>
+			
+					<!-- داروها -->
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#collapseDrugs" role="button" aria-expanded="true">
+							<i class="bi bi-capsule-pill fa-fw me-2"></i>مدیریت داروها
+						</a>
+						<ul class="nav collapse show flex-column" id="collapseDrugs" data-bs-parent="#navbar-sidebar">
+							<li class="nav-item active"><a class="nav-link" href="/overseer/drugs?page=1">لیست داروها</a></li>
+						</ul>
+					</li>
+			
+					<!-- درمانگاه‌ها -->
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#collapseClinics" role="button">
+							<i class="bi bi-hospital fa-fw me-2"></i>درمانگاه‌ها
+						</a>
+						<ul class="nav collapse flex-column" id="collapseClinics" data-bs-parent="#navbar-sidebar">
+							<li class="nav-item"><a class="nav-link" href="/overseer/clinics?page=1">لیست درمانگاه‌ها</a></li>
+						</ul>
+					</li>
+			
+					<!-- داروخانه‌ها -->
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#collapsePharmacies" role="button">
+							<i class="bi bi-shop fa-fw me-2"></i>مدیریت داروخانه‌ها
+						</a>
+						<ul class="nav collapse flex-column" id="collapsePharmacies" data-bs-parent="#navbar-sidebar">
+							<li class="nav-item"><a class="nav-link" href="/overseer/pharmacies?page=1">لیست داروخانه‌ها</a></li>
+						</ul>
+					</li>
+			
+					<!-- نسخه‌ها -->
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="collapse" href="#collapsePrescriptions" role="button">
+							<i class="bi bi-file-medical fa-fw me-2"></i>نسخه‌ها
+						</a>
+						<ul class="nav collapse flex-column" id="collapsePrescriptions" data-bs-parent="#navbar-sidebar">
+							<li class="nav-item"><a class="nav-link" href="/overseer/prescriptions">مشاهده نسخه‌ها</a></li>
+						</ul>
+					</li>
+			
+				</ul>
+			
+				<!-- Sidebar Footer -->
+				<div class="px-3 mt-auto pt-3">
+					<div class="d-flex align-items-center justify-content-between text-primary-hover">
+						<a class="h5 mb-0 text-body" href="/overseer/settings" data-bs-toggle="tooltip" title="تنظیمات">
+							<i class="bi bi-gear-fill"></i>
+						</a>
+						<a class="h5 mb-0 text-body" href="/" data-bs-toggle="tooltip" title="صفحه اصلی">
+							<i class="bi bi-globe"></i>
+						</a>
+						<a class="h5 mb-0 text-body" href="/logout" data-bs-toggle="tooltip" title="خروج">
+							<i class="bi bi-power"></i>
+						</a>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</nav>
+
+	<div class="page-content">
+		<nav class="navbar top-bar navbar-light border-bottom py-0 py-xl-3">
+			<div class="container-fluid p-0">
+				<div class="d-flex align-items-center w-100">
+
+					<!-- Logo START -->
+					<div class="d-flex align-items-center d-xl-none">
+						<a class="navbar-brand" href="/">
+							<img class="light-mode-item navbar-brand-item h-30px" src="/images/logo.png" alt="">
+							<img class="dark-mode-item navbar-brand-item h-30px" src="/images/logo.png" alt="">
+						</a>
+					</div>
+					<!-- Logo END -->
+
+					<!-- Toggler for sidebar START -->
+					<div class="navbar-expand-xl sidebar-offcanvas-menu">
+						<button class="navbar-toggler me-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-expanded="false" aria-label="Toggle navigation" data-bs-auto-close="outside">
+							<i class="bi bi-text-right fa-fw h2 lh-0 mb-0 rtl-flip" data-bs-target="#offcanvasMenu"> </i>
+						</button>
+					</div>
+					<!-- Toggler for sidebar END -->
+					
+					<!-- Top bar left -->
+					<div class="navbar-expand-lg ms-auto ms-xl-0">
+						
+						<!-- Toggler for menubar START -->
+						<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopContent" aria-controls="navbarTopContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-animation">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</button>
+						<!-- Toggler for menubar END -->
+
+					</div>
+					<!-- Top bar left END -->
+					
+
+				</div>
+			</div>
+		</nav>
+		<div class="page-content-wrapper border">
+			<div class="row mb-3">
+				<div class="col-12 d-sm-flex justify-content-between align-items-center">
+					<h1 class="h3 mb-2 mb-sm-0 fs-5">مدیریت داروها</h1>
+					<div>
+						<button class="btn btn-sm btn-primary mb-0 me-2" data-bs-toggle="modal" data-bs-target="#manualDrugModal">افزودن دارو دستی</button>
+						<button class="btn btn-sm btn-secondary mb-0" data-bs-toggle="modal" data-bs-target="#uploadExcelModal">آپلود فایل اکسل</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="card bg-transparent border">
+				<div class="card-body">
+					<div class="table-responsive border-0 rounded-3">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>نام دارو</th>
+									<th>کد دارو</th>
+									<th>مقدار مصرف مجاز</th>
+									<th>عوارض</th>
+									<th>فواید</th>
+									<th>موارد مصرف</th>
+									<th>حساسیت</th>
+									<th>تداخل‌ها</th>
+									<th>توضیحات</th>
+									<th>نیاز به نسخه</th>
+									<th>نوع</th>
+									<th>تاریخ تأیید</th>
+									<th>وضعیت</th>
+									<th>عملیات</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% for (let i = 0; i < drugs.length; i++) { %>
+									<tr data-id="<%= drugs[i]._id %>">
+										<td><%= drugs[i].name %></td>
+										<td><%= drugs[i].code %></td>
+										<td><%= drugs[i].max_dosage || '' %></td>
+										<td><%= drugs[i].side_effects || '' %></td>
+										<td><%= drugs[i].benefits || '' %></td>
+										<td><%= drugs[i].usage || '' %></td>
+										<td><%= drugs[i].allergy || '' %></td>
+										<td><%= drugs[i].interactions || '' %></td>
+										<td><%= drugs[i].description || '' %></td>
+										<td><%= drugs[i].prescription_required ? 'نیاز به نسخه' : 'بدون نیاز به نسخه' %></td>
+										<td><%= drugs[i].type || '' %></td>
+										<td><%= new Date(drugs[i].approved).toLocaleDateString('fa-IR') || '' %></td>
+										<td class="status-cell">
+											<% if (drugs[i].status === 'active') { %>
+												<span class="badge bg-success">فعال</span>
+											<% } else { %>
+												<span class="badge bg-secondary">غیرفعال</span>
+											<% } %>
+										</td>
+										<td>
+											<button class="btn btn-sm btn-warning edit-btn" data-bs-toggle="modal" data-bs-target="#manualDrugModal">ویرایش</button>
+											<button class="btn btn-sm toggle-status-btn <%= drugs[i].status === 'active' ? 'btn-danger' : 'btn-success' %>">
+												<%= drugs[i].status === 'active' ? 'غیرفعال' : 'فعال‌سازی' %>
+											</button>
+										</td>
+									</tr>
+								<% } %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+<!-- Card footer START -->
+<div class="card-footer bg-transparent pt-0">
+	<div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+	  <!-- Content -->
+	  <p class="mb-0 text-center text-sm-start">
+		نمایش <%= (currentPage - 1) * itemsPerPage + 1 %> تا <%= Math.min(currentPage * itemsPerPage, totalDrugs) %> از <%= totalDrugs %>
+	  </p>
+	  <!-- Pagination -->
+	  <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+		<ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+		  <!-- Previous button -->
+		  <% if (currentPage > 1) { %>
+			<li class="page-item mb-0">
+			  <a class="page-link" href="/overseer/drugs?page=<%= currentPage - 1 %>"><i class="fas fa-angle-right"></i></a>
+			</li>
+		  <% } %>
+  
+		  <!-- Page numbers (max 5 pages around current page) -->
+		  <% 
+			const maxPagesToShow = 3; // تعداد شماره صفحات قابل نمایش (جز دکمه‌های جهت‌دار)
+			let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
+			let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+  
+			if (endPage - startPage + 1 < maxPagesToShow) {
+			  startPage = Math.max(1, endPage - maxPagesToShow + 1);
+			}
+  
+			for (let i = startPage; i <= endPage; i++) { %>
+			<li class="page-item mb-0 <%= i === currentPage ? 'active' : '' %>">
+			  <a class="page-link" href="/overseer/drugs?page=<%= i %>"><%= i %></a>
+			</li>
+		  <% } %>
+  
+		  <!-- Next button -->
+		  <% if (currentPage < totalPages) { %>
+			<li class="page-item mb-0">
+			  <a class="page-link" href="/overseer/drugs?page=<%= currentPage + 1 %>"><i class="fas fa-angle-left"></i></a>
+			</li>
+		  <% } %>
+		</ul>
+	  </nav>
+	  <!-- Pagination END -->
+	</div>
+  </div>
+  <!-- Card footer END -->
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Manual Drug Entry -->
+	<div class="modal fade" id="manualDrugModal" tabindex="-1" aria-labelledby="manualDrugModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="manualDrugModalLabel">افزودن/ویرایش دارو</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+				</div>
+				<div class="modal-body">
+					<form id="drugForm">
+						<input type="hidden" name="drug_id">
+						<div class="row">
+							<div class="col-md-6">
+								<label class="form-label">نام دارو</label>
+								<input type="text" class="form-control" name="name" required>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">کد دارو</label>
+								<input type="text" class="form-control" name="code" required>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">مقدار مصرف مجاز</label>
+								<input type="text" class="form-control" name="max_dosage" required>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">عوارض</label>
+								<textarea class="form-control" name="side_effects" rows="2"></textarea>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">فواید</label>
+								<textarea class="form-control" name="benefits" rows="2"></textarea>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">موارد مصرف</label>
+								<textarea class="form-control" name="usage" rows="2"></textarea>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">حساسیت</label>
+								<textarea class="form-control" name="allergy" rows="2"></textarea>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">تداخل‌ها</label>
+								<textarea class="form-control" name="interactions" rows="2"></textarea>
+							</div>
+							<div class="col-md-6" style="direction: rtl;">
+								<label class="form-label">نیاز به نسخه</label>
+								<select class="form-control" name="prescription_required" required>
+									<option value="true" style="direction: rtl;">نیاز به نسخه</option>
+									<option value="false" style="direction: rtl;">بدون نیاز به نسخه</option>
+								</select>
+							</div>
+							<div class="col-md-6" style="direction: rtl;">
+								<label class="form-label">نوع</label>
+								<select class="form-control" name="type" required>
+									<option value="قرص" style="direction: rtl;">قرص</option>
+									<option value="شربت" style="direction: rtl;">شربت</option>
+									<option value="آمپول" style="direction: rtl;">آمپول</option>
+								</select>
+							</div>
+							<div class="col-md-12">
+								<label class="form-label">توضیحات</label>
+								<textarea class="form-control" name="description" rows="3"></textarea>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+					<button type="submit" class="btn btn-success" form="drugForm" id="submitDrugBtn">ثبت دارو</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Excel Upload -->
+	<div class="modal fade" id="uploadExcelModal" tabindex="-1" aria-labelledby="uploadExcelModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="uploadExcelModalLabel">آپلود فایل اکسل</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+				</div>
+				<div class="modal-body">
+					<form id="excelForm" enctype="multipart/form-data">
+						<div class="mb-3">
+							<label class="form-label">انتخاب فایل اکسل</label>
+							<input type="file" class="form-control" name="excelFile" accept=".xlsx, .xls" required>
+						</div>
+						<p>نمونه فایل مجاز: <a href="/sample-drug-excel.xlsx" download>دانلود نمونه</a></p>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+					<button type="submit" class="btn btn-success" form="excelForm" id="uploadExcelBtn">آپلود</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+<script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+<script src="/js/functions.js"></script>
+<script src="/js/OMD01.js"></script>
+</body>
+</html>
